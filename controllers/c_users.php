@@ -44,10 +44,13 @@ class users_controller extends base_controller {
    
     }    
 
-    public function login() {
+    public function login($error = NULL) {
         # Setup view
         $this->template->content = View::instance('v_users_login');
         $this->template->title   = "Login";
+
+        # Pass data to the view
+        $this->template->content->error = $error;
 
         # Render template
         echo $this->template;        
@@ -73,8 +76,8 @@ class users_controller extends base_controller {
         # If we didn't find a matching token in the database, it means login failed
         if(!$token) {
 
-            # Send them back to the login page
-            Router::redirect("/users/login/");
+            # Send them back to the login page with an error message
+            Router::redirect("/users/login/error");
 
         # But if we did, login succeeded! 
         } else {
@@ -88,7 +91,7 @@ class users_controller extends base_controller {
             param 3 = when to expire
             param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
             */
-            setcookie("token", $token, strtotime('+1 year'), '/');
+            setcookie("token", $token, strtotime('+2 weeks'), '/');
 
             # Send them to the main page - or whever you want them to go
             Router::redirect("/");
