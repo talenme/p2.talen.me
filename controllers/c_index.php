@@ -29,6 +29,9 @@ class index_controller extends base_controller {
 	    	$client_files_body = Array("");
 	    	$this->template->client_files_body = Utils::load_client_files($client_files_body);   
 	    	*/
+
+	    # Get and print the current timestamp
+    		echo Time::now();
 	      					     		
 		# Render the view
 			echo $this->template;
