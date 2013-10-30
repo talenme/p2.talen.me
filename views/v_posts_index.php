@@ -1,3 +1,5 @@
+<h1><?php echo $user->first_name; ?> - posts from people you are following:</h1>
+
 <?php foreach($posts as $post): ?>
 
 <article>
