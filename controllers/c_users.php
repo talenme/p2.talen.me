@@ -6,15 +6,15 @@ class users_controller extends base_controller {
         # echo "users_controller construct called<br><br>";
     } 
 
-    public function index() {
-        echo "This is the index page";
-    }
+#    public function index() {
+#        echo "This is the index page";
+#    }
 
     public function signup() {
 
         # Setup view
             $this->template->content = View::instance('v_users_signup');
-            $this->template->title   = "Sign Up";
+            $this->template->title   = "Prattle: Sign Up";
 
         # Render template
             echo $this->template;
@@ -47,7 +47,7 @@ class users_controller extends base_controller {
     public function login($error = NULL) {
         # Setup view
         $this->template->content = View::instance('v_users_login');
-        $this->template->title   = "Login";
+        $this->template->title   = APP_NAME.": Login";
 
         # Pass data to the view
         $this->template->content->error = $error;
@@ -130,7 +130,7 @@ class users_controller extends base_controller {
 
         # Setup view
         $this->template->content = View::instance('v_users_profile');
-        $this->template->title   = "Profile of".$this->user->first_name;
+        $this->template->title   = APP_NAME." Profile of".$this->user->first_name;
 
         # Render template
         echo $this->template;
