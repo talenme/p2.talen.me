@@ -17,7 +17,7 @@
     <br><br>
 
     <?php if(isset($error)): ?>
-        <div class='error'>
+        <div class='err'>
             All fields are required - please re-check your input to ensure all fields are entered
             and email address is valid.<br>
             <?php echo $error; ?>
