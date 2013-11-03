@@ -38,29 +38,38 @@ h2
 	font-size:25px;
 }
 
+.error
+{
+	margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    color: #D11D1D;
+}
+
 .header
 {
-     margin: 0;
-     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-     background-color:#dddddd;
-     font-size: 18px;
-     line-height: 20px;
-     color: #000000;	
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color:#dddddd;
+    font-size: 18px;
+    line-height: 20px;
+    color: #000000;	
 }
 
 .shadow
 {
-     background-color:#bbbbbb;	
+    background-color:#bbbbbb;	
 }
 
 .title
 {
-     margin: 0;
-     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-     font-size: 20px;
-     line-height: 20px;
-     font-weight: bold;
-     color: #0080FF;	
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    color: #0080FF;	
 }
 
 p 

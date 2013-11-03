@@ -10,24 +10,35 @@ class users_controller extends base_controller {
 #        echo "This is the index page";
 #    }
 
-    public function signup() {
+    public function signup($error = NULL) 
+    {
 
         # Setup view
             $this->template->content = View::instance('v_users_signup');
             $this->template->title   = "Prattle: Sign Up";
 
+        # Pass data to the view
+            $this->template->content->error = $error;
+
         # Render template
             echo $this->template;
     }
 
-    public function p_signup() {
-
+    public function p_signup() 
+    {
         # Dump out the results of POST to see what the form submitted
         // print_r($_POST);
 
         # More data we want stored with the user
         $_POST['created']  = Time::now();
         $_POST['modified'] = Time::now(); 
+
+        if((!$_POST['first_name']) || (!$_POST['last_name']) || 
+            (!$_POST['password']) || (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))) 
+        {
+            # Send them back to the login page with an error message
+            Router::redirect("/users/signup/error");
+        }
 
         # Encrypt the password  
         $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);            
@@ -130,10 +141,28 @@ class users_controller extends base_controller {
 
         # Setup view
         $this->template->content = View::instance('v_users_profile');
-        $this->template->title   = APP_NAME." Profile of".$this->user->first_name;
+        $this->template->title   = APP_NAME." Profile of ".$this->user->first_name;
 
         # Render template
         echo $this->template;
     }
+
+    public function p_profile($user_name = NULL) {
+
+        # If user is blank, they're not logged in; redirect them to the login page
+        if(!$this->user) {
+            Router::redirect('/users/login');
+        }
+
+        # If they weren't redirected away, continue:
+
+        # Setup view
+        $this->template->content = View::instance('v_users_profile');
+        $this->template->title   = APP_NAME." Profile of ".$this->user->first_name;
+
+        # Render template
+        echo $this->template;
+    }
+
 
 } # end of the class
