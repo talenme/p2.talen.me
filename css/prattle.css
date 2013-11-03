@@ -75,8 +75,10 @@ h2
 
 .table_settings
 {
+	padding: 5px;
 	border: 0;
 	margin: 3;
+	background-color:#ffffff;
 	text-align: left;
 	vertical-align: top;
 }
