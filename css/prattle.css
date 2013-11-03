@@ -90,6 +90,7 @@ h2
     border-radius:25px;
 	border-spacing: 10px;
 	background-color:#C1ECF5;
+	text-align: right;
 	box-shadow: 6px 6px 6px #888888;
 }
 
@@ -104,3 +105,8 @@ p
      color: black;
      font-size: 100%;
 }
+
+a:link {text-decoration:none; background-color:#0080FF;}
+a:visited {text-decoration:none; background-color:#0080FF;}
+a:hover {text-decoration:underline; background-color:#FF1717;}
+a:active {text-decoration:underline; background-color:#FFFFFF;}
