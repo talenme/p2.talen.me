@@ -38,11 +38,6 @@ h2
 	font-size:25px;
 }
 
-.page_margin
-{
-	margin: 5;
-}
-
 .error
 {
     margin: 0;
@@ -96,6 +91,12 @@ h2
 	margin: 25;
 	background-color:#C1ECF5;
 	box-shadow: 6px 6px 6px #888888;
+}
+
+.table_margin
+{
+	border-spacing: 10px;
+	background-color:#ffffff;
 }
 
 p 
