@@ -18,8 +18,8 @@
 
     <?php if(isset($error)): ?>
         <div class='error'>
-            All fields are required - please re-check your input to ensure all fields are entered
-            and email address is valid.<br>
+            All fields are required - please re-check your input to ensure<br>
+            all fields are entered and email address is valid.<br>
         </div>
         <br>
     <?php endif; ?>    
