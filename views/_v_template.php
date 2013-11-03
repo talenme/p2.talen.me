@@ -42,8 +42,10 @@
 
     <br>	
 
+    <table class='table_margin'><tr><td>
 	<?php if(isset($content)) echo $content; ?>
 
 	<?php if(isset($client_files_body)) echo $client_files_body; ?>
+	</td></tr></table>
 </body>
 </html>
