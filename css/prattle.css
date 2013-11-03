@@ -73,6 +73,14 @@ h2
     color: #0080FF;	
 }
 
+.table_settings
+{
+	border: 0;
+	padding: 3;
+	halign: left;
+	valign: top;
+}
+
 p 
 {
      color: black;
