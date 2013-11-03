@@ -83,6 +83,13 @@ h2
 	vertical-align: top;
 }
 
+.border_table
+{
+	border: 0;
+	margin: 8;
+	background-color:#C3E2E8;
+}
+
 p 
 {
      color: black;
