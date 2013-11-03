@@ -16,7 +16,7 @@ head
 
 body
 {
-     margin: 5;
+     margin: 0;
      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
      background-color:#ffffff;
      font-size: 18px;
@@ -36,6 +36,11 @@ h2
 {	
 	text-align:center;
 	font-size:25px;
+}
+
+.page_margin
+{
+	margin: 5;
 }
 
 .error
