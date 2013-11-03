@@ -1,4 +1,4 @@
-<h1><?php echo $user->first_name; ?> - posts from people you are following:</h1><br><br>
+<h1><?php echo $user->first_name; ?> - posts from people you are following:</h1>
 
 <?php $i = 0; ?>
 
@@ -20,7 +20,7 @@ Sort order:
 			<?php $i++; ?>
     		<b><?=$i?>.</b>
     	</td>
-    	<td class='table_settings'>
+    	<td class='table_settings' width=175>
     		<b><?=$post['first_name']?> <?=$post['last_name']?></b><br>
     		<time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
         	<?=Time::display($post['created'])?>
