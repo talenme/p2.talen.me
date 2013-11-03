@@ -76,9 +76,9 @@ h2
 .table_settings
 {
 	border: 0;
-	padding: 3;
-	halign: left;
-	valign: top;
+	margin: 3;
+	text-align: left;
+	vertical-align: top;
 }
 
 p 
