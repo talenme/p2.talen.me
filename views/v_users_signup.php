@@ -1,5 +1,8 @@
 <form method='POST' action='/users/p_signup'>
 
+    <h1>Prattle Signup</h1>
+    Please enter all fields to create an account.<br>
+    <br>
     First Name<br>
     <input type='text' name='first_name'>
     <br><br>
