@@ -63,9 +63,10 @@ class posts_controller extends base_controller {
         # Run the query
         $posts = DB::instance(DB_NAME)->select_rows($q);
 
+        # If there are no posts to view, send them back to selecting users to follow
         if (count($posts)==0)
         {
-            $this->template->content = View::instance('v_posts_empty');
+            Router::redirect("/posts/users?redirect=1");
         }
 
         # Pass data to the View

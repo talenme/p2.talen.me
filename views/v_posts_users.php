@@ -1,3 +1,8 @@
+<h1><?=APP_NAME?> Users</h1>
+
+<?php if(isset($_GET["redirect"])) {echo 
+    'You are currently not following any users - you may select one or more from the list below<br><br>';}?>
+
 <?php foreach($users as $user): ?>
 
     <!-- Print this user's name -->
