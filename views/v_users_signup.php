@@ -1,6 +1,6 @@
 <form method='POST' action='/users/p_signup'>
 
-    <h1>Prattle Signup</h1>
+    <h1><?=APP_NAME?> Signup</h1>
     Please enter all fields to create an account.<br>
     <br>
     First Name<br>

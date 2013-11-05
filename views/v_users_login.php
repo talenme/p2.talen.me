@@ -1,5 +1,6 @@
 <form method='POST' action='/users/p_login'>
 
+    <h1><?=APP_NAME?> Login</h1>
     Email<br>
     <input type='text' name='email'>
     <br><br>
