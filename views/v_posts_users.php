@@ -3,7 +3,10 @@
 <?php if(isset($_GET["redirect"])) {echo 
     'You currently have no posts to view. You may follow more users by selecting from the list below:<br><br>';}?>
 
-<table border=0>
+<table class='border_table'>
+    <tr><td>
+
+<table class='table_settings'>
     <?php foreach($users as $user): ?>
         <tr><td>
             <!-- Print this user's name -->
@@ -26,3 +29,5 @@
     </tr></td>
 <?php endforeach; ?>
 </table>
+
+</td></tr></table>
