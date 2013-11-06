@@ -15,7 +15,7 @@ Sort order:
 
 <table class='table_settings'>
 <?php foreach($orderedList as $post): ?>
-
+<!-- List every post from followed users, and number the entries -->
 <article>
 	<tr>
 		<td class='table_settings'>
