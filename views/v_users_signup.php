@@ -23,6 +23,7 @@
         <div class='error'>
             All fields are required - please re-check your input to ensure<br>
             all fields are entered and email address is valid.<br>
+            Email address must be unique.<br>
         </div>
         <br>
     <?php endif; ?>    

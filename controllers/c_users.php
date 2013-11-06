@@ -40,6 +40,18 @@ class users_controller extends base_controller {
             Router::redirect("/users/signup/error");
         }
 
+        # Ensure that the email address entered does not already exist
+        $q = "SELECT email 
+            FROM users 
+            WHERE email = '".$_POST['email']."'";
+
+        $emailCheck = DB::instance(DB_NAME)->select_field($q);
+        # If it does, don't allow them to proceed
+        if ($emailCheck)
+        { 
+            Router::redirect("/users/signup/error");
+        }
+
         # Encrypt the password  
         $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);            
 
@@ -50,7 +62,7 @@ class users_controller extends base_controller {
         $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
 
         # Send them home
-        Router::redirect("/");
+        Router::redirect("/users/login");
    
     }    
 
