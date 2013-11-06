@@ -1,7 +1,7 @@
 <h1><?=APP_NAME?> Users</h1>
 
 <?php if(isset($_GET["redirect"])) {echo 
-    'You are currently not following any users - you may select one or more from the list below<br><br>';}?>
+    'You currently have no posts to view. You may follow more users by selecting from the list below:<br><br>';}?>
 
 <table border=0>
     <?php foreach($users as $user): ?>
