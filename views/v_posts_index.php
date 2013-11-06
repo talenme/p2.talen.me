@@ -2,9 +2,11 @@
 
 <?php $i = 0; ?>
 
+<!-- The tables were just a sad effort to make things look nicer. -->
 <table class='border_table'>
 	<tr><td>
 
+<!-- Allow the user to set the sort order of the list -->
 <?php if(isset($_GET["order"])) {$orderedList = new ArrayIterator(array_reverse($posts));} else {$orderedList = $posts;}?>
 
 Sort order:
