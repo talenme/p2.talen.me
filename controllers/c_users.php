@@ -149,11 +149,24 @@ class users_controller extends base_controller {
         }
 
         # If they weren't redirected away, continue:
+        $q = "SELECT about 
+            FROM users 
+            WHERE user_id = '".$this->user->user_id."'";
+
+        $about = DB::instance(DB_NAME)->select_field($q);
+
+        $q2 = "SELECT location 
+            FROM users 
+            WHERE user_id = '".$this->user->user_id."'";
+
+        $loc = DB::instance(DB_NAME)->select_field($q2);
 
         # Setup view
         $this->template->content = View::instance('v_users_profile');
         $this->template->title   = APP_NAME." Profile of ".$this->user->first_name;
 
+        $this->template->content->about = $about;
+        $this->template->content->loc = $loc;
         # Render template
         echo $this->template;
     }
@@ -164,15 +177,19 @@ class users_controller extends base_controller {
         if(!$this->user) {
             Router::redirect('/users/login');
         }
+        #$data = Array("location" => $_POST['location']);
+        #$data = Array("about" => $_POST['bio']);
 
-        # If they weren't redirected away, continue:
+        # Do the update
+        DB::instance(DB_NAME)->update("users", $_POST, "WHERE user_id = '".$this->user->user_id."'");
 
         # Setup view
-        $this->template->content = View::instance('v_users_profile');
-        $this->template->title   = APP_NAME." Profile of ".$this->user->first_name;
+        #$this->template->content = View::instance('v_users_profile');
+        #$this->template->title   = APP_NAME." Profile of ".$this->user->first_name;
 
         # Render template
-        echo $this->template;
+        #echo $this->template;
+        Router::redirect('/users/profile');
     }
 
 

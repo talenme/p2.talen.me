@@ -1,9 +1,14 @@
-<h1>This is the profile of <?=$user->first_name?> <?=$user->last_name?></h1>
-
+<form method='POST' action='/users/p_profile'>
 <div class='body'>
-<form action="/users/p_profile" method="POST" enctype="multipart/form-data">
-    <label>Add a profile photo:</label><br>
-    <input type="file" name="image" /><br>
-    <input type="submit" />
-</form>
+	<h1><?=APP_NAME?> Profile for <?=$user->first_name?> <?=$user->last_name?></h1>
+	Optional: You may tell people more about yourself by entering a short bio and
+		location information.<br><br>
+
+    <label for='about'>About You:</label><br>
+    <textarea name='about' id='about' cols=40 rows=2><?=$about?></textarea><br>
+    <label for='location'>Location:</label>
+    <input type='text' name='location' value='<?=$loc?>'>
+    <br><br>
+    <input type='submit' value='Submit'>
 </div>
+</form>
