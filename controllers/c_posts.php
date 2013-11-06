@@ -35,7 +35,7 @@ class posts_controller extends base_controller {
         DB::instance(DB_NAME)->insert('posts', $_POST);
 
         # Quick and dirty feedback
-        echo "Your post has been added. <a href='/posts/add'>Add another</a>";
+        Router::redirect("/posts/add?submitted=1");
 
     }
 

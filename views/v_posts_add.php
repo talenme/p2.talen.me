@@ -1,3 +1,6 @@
+<?php if(isset($_GET["submitted"])) {echo 
+    'Your post was successfully posted.<br><br>';}?>
+
 <form method='POST' action='/posts/p_add'>
 
 	<h1><?=APP_NAME?> Posting</h1>

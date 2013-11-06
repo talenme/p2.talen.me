@@ -12,3 +12,5 @@
     <input type='submit' value='Submit'>
 </div>
 </form>
+<?php if(isset($_GET["submitted"])) {echo 
+    '<b>Your profile was successfully updated.</b>';}?>

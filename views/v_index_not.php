@@ -11,3 +11,4 @@ Additional edits to original code:<br>
 <br>
 - /posts/index numbered the entries, enable ascending/descending sorting, if zero posts recommend adding people to follow
 <br>
+- ability to add profile info (location, bio). I tried to get images to work, but couldn't.

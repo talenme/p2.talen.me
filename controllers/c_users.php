@@ -148,13 +148,14 @@ class users_controller extends base_controller {
             Router::redirect('/users/login');
         }
 
-        # If they weren't redirected away, continue:
+        # Fetch the bio
         $q = "SELECT about 
             FROM users 
             WHERE user_id = '".$this->user->user_id."'";
 
         $about = DB::instance(DB_NAME)->select_field($q);
 
+        # Fetch the location
         $q2 = "SELECT location 
             FROM users 
             WHERE user_id = '".$this->user->user_id."'";
@@ -165,6 +166,7 @@ class users_controller extends base_controller {
         $this->template->content = View::instance('v_users_profile');
         $this->template->title   = APP_NAME." Profile of ".$this->user->first_name;
 
+        # Pass the bio and location info to the view
         $this->template->content->about = $about;
         $this->template->content->loc = $loc;
         # Render template
@@ -183,13 +185,8 @@ class users_controller extends base_controller {
         # Do the update
         DB::instance(DB_NAME)->update("users", $_POST, "WHERE user_id = '".$this->user->user_id."'");
 
-        # Setup view
-        #$this->template->content = View::instance('v_users_profile');
-        #$this->template->title   = APP_NAME." Profile of ".$this->user->first_name;
-
-        # Render template
-        #echo $this->template;
-        Router::redirect('/users/profile');
+        # Redirect back to the profile page
+        Router::redirect('/users/profile?submitted=1');
     }
 
 

@@ -25,7 +25,10 @@
         <?php if($user): ?>
 
             <a href='/users/logout'>Logout</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-            <a href='/users/profile'>Profile</a>
+            <a href='/users/profile'>Profile</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href='/posts/users'>Users</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href='/posts/index'>View Posts</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href='/posts/add'>Create Post</a>
 
         <!-- Menu options for users who are not logged in -->
         <?php else: ?>
