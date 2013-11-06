@@ -62,7 +62,7 @@ class users_controller extends base_controller {
         $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
 
         # Send them home
-        Router::redirect("/users/login");
+        Router::redirect("/users/login?new_user=1");
    
     }    
 
@@ -179,8 +179,8 @@ class users_controller extends base_controller {
         if(!$this->user) {
             Router::redirect('/users/login');
         }
-        #$data = Array("location" => $_POST['location']);
-        #$data = Array("about" => $_POST['bio']);
+        # Sanitize the user entered data to prevent any funny-business (re: SQL Injection Attacks)
+        $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 
         # Do the update
         DB::instance(DB_NAME)->update("users", $_POST, "WHERE user_id = '".$this->user->user_id."'");

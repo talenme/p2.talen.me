@@ -1,3 +1,7 @@
+<?php if(isset($_GET["new_user"])) {echo 
+    'You have successfully signed up! Please login with your email 
+     address and password.<br><br>';}?>
+
 <form method='POST' action='/users/p_login'>
 
     <h1><?=APP_NAME?> Login</h1>
